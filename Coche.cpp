@@ -1,14 +1,11 @@
 #include "Coche.hpp"
 #include "Punto.hpp"
+#include "Ruta.hpp"
 Coche::Coche(Punto inicial){
     enRuta = false;
     tiempoHastaAcabar = 0;
     pFinal = inicial;
     numRutas = 0;
-}
-
-bool Coche::estaEnRuta(){
-    return this->enRuta;
 }
 
 int Coche::tiempoRestante(){
@@ -29,4 +26,14 @@ Punto Coche::destinoActual(){
 
 int Coche::numeroRutas(){
     return this->numRutas;
+}
+void Coche::nuevoDestino(Punto nuevo){
+    Punto actual = this->pFinal;
+    this->tiempoHastaAcabar += actual.distancia(nuevo);
+    this->pFinal = nuevo;
+    this->numRutas++;
+}
+void Coche::anyadirRuta(Ruta r, int id){
+    nuevoDestino(r.obtenerDestino);
+    this->rutasAsignadas.push_back(id);
 }

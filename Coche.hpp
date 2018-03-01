@@ -9,21 +9,18 @@
 #include <ostream>
 #include "Punto.hpp"
 #include <list>
+#include "Ruta.hpp"
 using namespace std;
 
 class Coche {
 private:
 	Punto pFinal;
 	list<int> rutasAsignadas;
-    bool enRuta;
     int tiempoHastaAcabar;
     int numRutas;
 public:
 	//Crea el coche dado el punto inicial
     Coche(Punto inicial);
-
-    //Devuelve true si el coche esta actualmente en ruta
-    bool estaEnRuta();
 
     //Devuelve el numero de pasos hasta su destino si esta en ruta. Si no
     //devuelve 0.
@@ -39,4 +36,10 @@ public:
 
     //Devuelve el numero de rutas que han sido asignadas historicamente a este coche
     int numeroRutas();
+
+    //Poner un nuevo punto destino al coche
+    void nuevoDestino(Punto nuevo);
+
+    //Anyade una nueva ruta a las rutas asignadas a este coche
+    void anyadirRuta(Ruta r, int id);
 };
