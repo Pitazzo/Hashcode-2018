@@ -10,8 +10,8 @@
 
 using namespace std;
 
-string nombreFicheroEntrada = "e_high_bonus.in";
-string nombreFicheroSalida = "e_output.op";
+string nombreFicheroEntrada = "c_no_hurry.in";
+string nombreFicheroSalida = "c_output.op";
 
 int numFilas;
 int numColumnas;
