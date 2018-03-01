@@ -9,13 +9,12 @@
 class ListaCoche{
     private:
         list<Coche> listCoche;
-        list<surtidor>::iterator iterador;
 
     public:
         //Crea una nueva lista
         ListaCoche();
         //Añade nuevo
-        void AnyadirCoche(Coche c);
+        void AnyadirCoche(const Coche &c);
         //Calcular ruta proxima
         Coche CalcularMasCercano(Ruta r);
         //

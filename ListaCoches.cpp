@@ -2,26 +2,26 @@
 
 
         //Crea una nueva lista
-        ListaCoches::ListaCoche(){
+        ListaCoche::ListaCoche(){
 
         }
         //Añade nuevo
-        void ListaCoches::AnyadirCoche(const Coche &c){
+        void ListaCoche::AnyadirCoche(const Coche &c){
             this->listCoche.push_back(c);
         }
         //Calcular ruta proxima
-        Coche ListaCoches::CalcularMasCercano(Ruta r){
+        Coche ListaCoche::CalcularMasCercano(Ruta r){
             for(Coche& c: this->listCoche){
-                if(!c.estaEnRuta() && (c.tiempoRestante()+   -r.obtobtenerMinComienzo())){
+                if(!c.estaEnRuta() && (c.tiempoRestante()+ r.obtenerOrigen().distancia(c.destinoActual())  -r.obtenerMinComienzo())){
 
                 }
             }
         }
         //
-        string ListaCoches::to_string(){
+        string ListaCoche::to_string(){
             string rutasCoches;
             for(Coche& c: this->listCoche){
-                rutasCoches = rutasCoches + to_string(c) + "\n";
+                rutasCoches = rutasCoches + c.toString() + "\n";
             }
             return rutasCoches;
         }
