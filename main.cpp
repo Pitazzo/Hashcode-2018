@@ -36,9 +36,9 @@ void leerFichero(){
 				cout << filaComienzo << " " << columnaComienzo << " " << filaFinal <<
 				" " << columnaFinal << " " << comienzoMasTemprano << " "
 				<< ultimoFinalPosible << endl;
-				Punto inicio = new Punto(filaComienzo, columnaComienzo);
-				Punto llegada = new Punto(filaFinal, columnaFinal);
-				Ruta r = new Ruta(inicio, llegada, comienzoMasTemprano, ultimoFinalPosible);
+				Punto inicio(filaComienzo, columnaComienzo);
+				Punto llegada(filaFinal, columnaFinal);
+				Ruta ruta(inicio, llegada, comienzoMasTemprano, ultimoFinalPosible);
 			}
 		}
 		f.close();

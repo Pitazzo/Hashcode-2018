@@ -1,3 +1,6 @@
+//Pedro
+#pragma once
+
 class Punto{
 	private:
 		int x;
@@ -5,6 +8,8 @@ class Punto{
 	public:
 		
 		//Constructor por defecto
+		Punto();
+		
 		Punto(int x, int y);
 		
 		int obtenerX();

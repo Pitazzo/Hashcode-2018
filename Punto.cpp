@@ -1,5 +1,9 @@
+//Pedro
+
 #include "Punto.hpp"
 #include <stdlib.h> 
+
+Punto::Punto(){}
 
 Punto::Punto(int x, int y){
 	this->x = x;
