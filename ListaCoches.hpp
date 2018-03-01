@@ -4,6 +4,7 @@
 
 #include <list>
 #include <string>
+#include <stdlib.h>
 #include "Coche.hpp"
 #include "Ruta.hpp"
 class ListaCoche{
@@ -16,7 +17,7 @@ class ListaCoche{
         //Añade nuevo
         void anyadirCoche(const Coche &c);
         //Calcular ruta proxima
-        Coche calcularMasCercano(Ruta r);
+        void calcularMasCercano(Ruta r);
         //
         string to_string();
 

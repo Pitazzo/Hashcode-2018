@@ -10,11 +10,16 @@
             this->listCoche.push_back(c);
         }
         //Calcular ruta proxima
-        Coche ListaCoche::calcularMasCercano(Ruta r){
+        void ListaCoche::calcularMasCercano(Ruta r){
+            Coche* min = this->listCoche.front();
+            int distMin = abs(min.tiempoRestante()+ r.obtenerOrigen().distancia(min.destinoActual())  -r.obtenerMinComienzo());
+            int otraDist;
             for(Coche& c: this->listCoche){
-                if((c.tiempoRestante()+ r.obtenerOrigen().distancia(c.destinoActual())  -r.obtenerMinComienzo())){
-
+                if(otraDist = (abs(c.tiempoRestante()+ r.obtenerOrigen().distancia(c.destinoActual())  -r.obtenerMinComienzo())) < distMin){
+                    min = &c;
+                    distMin = otraDist;
                 }
+                
             }
         }
         //
