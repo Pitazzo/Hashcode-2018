@@ -14,9 +14,9 @@ class ListaCoche{
         //Crea una nueva lista
         ListaCoche();
         //Añade nuevo
-        void AnyadirCoche(const Coche &c);
+        void anyadirCoche(const Coche &c);
         //Calcular ruta proxima
-        Coche CalcularMasCercano(Ruta r);
+        Coche calcularMasCercano(Ruta r);
         //
         string to_string();
 
