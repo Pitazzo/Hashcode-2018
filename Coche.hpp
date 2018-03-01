@@ -1,16 +1,13 @@
-#ifndef COCHE_HPP
-#define COCHE_HPP
-
 //*****************************************************************
 // File:   Coche.hpp
 // Author: Enrique Torres Sanchez
 // Date:   Marzo 1
 //*****************************************************************
-
+#pragma once
 #include <iostream>
 #include <fstream>
 #include <ostream>
-#include <Punto.hpp>
+#include "Punto.hpp"
 #include <list>
 using namespace std;
 
@@ -20,6 +17,7 @@ private:
 	list<int> rutasAsignadas;
     bool enRuta;
     int tiempoHastaAcabar;
+    int numRutas;
 public:
 	//Crea el coche dado el punto inicial
     Coche(Punto inicial);
@@ -33,11 +31,12 @@ public:
 
     //Devuelve una string con el formato necesario para imprimirlo en el
     //fichero de salida
-    string to_string();
+    string toString();
 
     //Si esta en ruta, devuelve el punto al que se dirige el coche actualmente.
     //Si no, devuelve el punto en el que se encuentre actualmente.
     Punto destinoActual();
-};
 
-#endif // COCHE_HPP
+    //Devuelve el numero de rutas que han sido asignadas historicamente a este coche
+    int numeroRutas();
+};
