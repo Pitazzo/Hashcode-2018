@@ -26,3 +26,7 @@ string Coche::toString(){
 Punto Coche::destinoActual(){
     return this->pFinal;
 }
+
+int Coche::numeroRutas(){
+    return this->numRutas;
+}
