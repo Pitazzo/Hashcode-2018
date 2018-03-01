@@ -6,3 +6,7 @@ Ruta.o: Ruta.hpp Ruta.cpp
 
 Punto.o: Punto.hpp Punto.cpp
 	${CC} -c Punto.cpp ${CPPFLAGS}
+
+Main: main.cpp
+	${CC} ${CPPFLAGS} main.cpp -o main
+
