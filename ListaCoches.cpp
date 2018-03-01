@@ -10,7 +10,7 @@
             this->listCoche.push_back(c);
         }
         //Calcular ruta proxima
-        void ListaCoche::calcularMasCercano(Ruta r){
+        void ListaCoche::calcularMasCercano(Ruta r, int i){
             Coche* min = &(this->listCoche.front());
             int distMin = abs(min->tiempoRestante()+ r.obtenerOrigen().distancia(min->destinoActual())  -r.obtenerMinComienzo());
             int otraDist;
@@ -21,6 +21,7 @@
                 }
                 
             }
+            min->anyadirRuta(r, i);
         }
         //
         string ListaCoche::to_string(){

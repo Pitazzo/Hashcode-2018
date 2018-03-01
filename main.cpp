@@ -11,7 +11,7 @@
 using namespace std;
 
 string nombreFicheroEntrada = "e_high_bonus.in";
-string nombreFicheroSalida = "output.op";
+string nombreFicheroSalida = "e_output.op";
 
 int numFilas;
 int numColumnas;
@@ -45,12 +45,14 @@ void leerFichero(){
 	if(f.is_open()){
 		f >> numFilas; f >> numColumnas; f >> numVehiculos; f >> numViajes;
 		f >> bonus; f >> pasosSimulacion;
+		crearCoches();
 		int filaComienzo;
 		int columnaComienzo;
 		int filaFinal;
 		int columnaFinal;
 		int comienzoMasTemprano;
 		int ultimoFinalPosible;
+		int i = 0;
 		while(!f.eof()){
 			f >> filaComienzo; 
 			if(!f.eof()){
@@ -62,6 +64,8 @@ void leerFichero(){
 				Punto inicio(filaComienzo, columnaComienzo);
 				Punto llegada(filaFinal, columnaFinal);
 				Ruta ruta(inicio, llegada, comienzoMasTemprano, ultimoFinalPosible);
+				l.calcularMasCercano(ruta, i);
+				i++;
 			}
 		}
 		f.close();
@@ -72,7 +76,6 @@ void leerFichero(){
 
 int main(){
 	leerFichero();
-	crearCoches();
 	escribirFichero();
 	
 	return 0;

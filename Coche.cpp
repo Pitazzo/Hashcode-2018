@@ -2,7 +2,6 @@
 #include "Punto.hpp"
 #include "Ruta.hpp"
 Coche::Coche(Punto inicial){
-    enRuta = false;
     tiempoHastaAcabar = 0;
     pFinal = inicial;
     numRutas = 0;
@@ -34,6 +33,6 @@ void Coche::nuevoDestino(Punto nuevo){
     this->numRutas++;
 }
 void Coche::anyadirRuta(Ruta r, int id){
-    nuevoDestino(r.obtenerDestino);
+    nuevoDestino(r.obtenerDestino());
     this->rutasAsignadas.push_back(id);
 }
