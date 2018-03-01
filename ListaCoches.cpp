@@ -12,12 +12,16 @@
         //Calcular ruta proxima
         Coche ListaCoches::CalcularMasCercano(Ruta r){
             for(Coche& c: this->listCoche){
-                if(!c.estaEnRuta() && (c.tiempoRestante()+   -r.obtobtenerMinComienzo)){
+                if(!c.estaEnRuta() && (c.tiempoRestante()+   -r.obtobtenerMinComienzo())){
 
                 }
             }
         }
         //
         string ListaCoches::to_string(){
-
+            string rutasCoches;
+            for(Coche& c: this->listCoche){
+                rutasCoches = rutasCoches + to_string(c) + "\n";
+            }
+            return rutasCoches;
         }
