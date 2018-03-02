@@ -7,11 +7,31 @@ Ruta::Ruta(){
 	
 }
 bool Ruta::operator<(Ruta dos){
-	return this->obtenerMinComienzo() < dos.obtenerMaxFinal();
+	if(this->obtenerMinComienzo() < dos.obtenerMinComienzo()){
+		return true;
+	}else if(this->obtenerMinComienzo() == dos.obtenerMinComienzo()){
+		if(this->obtenerMaxFinal() < dos.obtenerMaxFinal()){
+			return true;
+		}else{
+			return this->idRuta() < dos.idRuta();
+		}
+	}else{
+		return false;
+	}
 }
 
 bool Ruta::operator<(const Ruta dos) const{
-	return this->obtenerMinComienzo() < dos.obtenerMaxFinal();
+	if(this->obtenerMinComienzo() < dos.obtenerMinComienzo()){
+		return true;
+	}else if(this->obtenerMinComienzo() == dos.obtenerMinComienzo()){
+		if(this->obtenerMaxFinal() < dos.obtenerMaxFinal()){
+			return true;
+		}else{
+			return this->idRuta() < dos.idRuta();
+		}
+	}else{
+		return false;
+	}
 }
 Ruta::Ruta(Punto inicio, Punto destino, int minInicio, int maxFinal, int i){
 	this->inicio = inicio;
