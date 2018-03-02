@@ -2,6 +2,7 @@
 
 #pragma once
 #include "Punto.hpp"
+#include <string>
 
 class Ruta{
 
@@ -31,4 +32,5 @@ class Ruta{
 		int obtenerMinComienzo();
 		
 		int obtenerMaxFinal();
+		std::string to_string();
 };

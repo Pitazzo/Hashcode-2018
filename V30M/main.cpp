@@ -94,6 +94,11 @@ void leerFichero(string s){
 			}
 		}
 		i = fueraTiempo = noLlegan = anteriorTearly = anteriorTfin = 0;
+			cerr << nombreFicheroSalida << endl;
+		for(Ruta r: setRutas){
+			//cout << "\033[31m" << r.to_string() << "\033[0m" << endl;
+			cerr << r.to_string() << endl;
+		}
 		for(Ruta r: setRutas){
 			if(l.calcularMasCercano(r, r.idRuta(), noLlegan)){
 					enTiempo++;
